@@ -1,0 +1,43 @@
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<th:block th:insert="~{/fragments/heading/heading :: heading(title='Register')}"/>
+<body>
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center m-5">
+    <div class="offset-3"></div>
+
+    <div class="d-flex justify-content-center text-center flex-column col-6">
+      <div class="title h4 text-uppercase pb-3">Create Account</div>
+      <form action="/" method="post" class="form d-flex flex-column" id="formSignUp">
+
+        <div class="input-group pb-3">
+          <input type="text" name="username" class="form-control border-1 rounded-0" id="username"
+                 placeholder="Username" style="min-height: 3rem">
+        </div>
+
+        <div class="input-group pb-3">
+          <input type="email" name="email" class="form-control border-1 rounded-0" id="email"
+                 placeholder="Email" style="min-height: 3rem">
+        </div>
+        <div class="input-group pb-3">
+          <input type="password" name="password" class="form-control border-1 rounded-0" id="password"
+                 placeholder="Password" style="min-height: 3rem">
+        </div>
+        <span class="error pt-3 text-danger"></span>
+
+        <div>
+          <button type="submit" class="btn text-uppercase p-3 px-5 text-dark border-0 rounded-0"
+                  style="background-color: #E3C5B8">Create
+          </button>
+        </div>
+      </form>
+      <div class="actions d-flex justify-content-center align-items-center pt-4 gap-2">
+        <a class="text-dark" th:href="@{/auth/login}">Back To Login</a>
+      </div>
+    </div>
+  </div>
+  <div class="offset-3"></div>
+</div>
+<th:block th:insert="~{fragments/scripts/scripts :: scripts}"/>
+<script th:src="@{/js/auth/register.js}"></script>
+</body>
+</html>

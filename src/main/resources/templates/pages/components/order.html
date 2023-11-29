@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<th:block th:insert="~{/fragments/heading/heading :: heading(title='Order')}"/>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between px-5 py-3">
+    <div class="header__menu">
+        <ul class="navbar-nav flex-row me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+            </li>
+        </ul>
+    </div>
+    <div class="d-flex justify-content-center align-content-center">
+        <div class="p-2">
+            <a role="button" class="btn" th:href="@{/cart}">Cart</a>
+        </div>
+        <div class="p-2">
+            <a role="button" class="btn" th:href="@{/auth/login}">Login</a>
+        </div>
+        <div class="p-2">
+            <a role="button" class="btn" th:href="@{/auth/register}">Register</a>
+        </div>
+        <div class="p-2">
+            <a role="button" href="/" class="logout btn">Logout</a>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center m-5">
+        <div class="offset-3"></div>
+
+        <div class="d-flex justify-content-center text-center flex-column col-6">
+            <div class="title h4 text-uppercase pb-3">Create Your Order</div>
+            <form action="/" method="post" class="form d-flex flex-column" id="formOrder">
+                <div class="input-group pb-3">
+                    <input type="email" name="email" class="form-control border-1 rounded-0" id="email"
+                           placeholder="Email" style="min-height: 3rem">
+                </div>
+                <div class="input-group pb-3">
+                    <input type="text" name="phone" class="form-control border-1 rounded-0" id="phone"
+                           placeholder="Phone" style="min-height: 3rem">
+                </div>
+                <div class="input-group pb-3">
+                    <input type="text" name="address" class="form-control border-1 rounded-0" id="address"
+                           placeholder="Address" style="min-height: 3rem">
+                </div>
+                <div class="total"></div>
+                <span class="error pt-3 text-danger"></span>
+
+                <div>
+                    <button type="submit" class="btn text-uppercase p-3 px-5 text-dark border-0 rounded-0"
+                            style="background-color: #E3C5B8">Create
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="offset-3"></div>
+</div>
+<th:block th:insert="~{fragments/scripts/scripts :: scripts}"/>
+<script th:src="@{/js/components/order.js}"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+.header__menu .navbar-nav {
+    font-size: 1rem;
+    font-weight: 300;
+    gap: 3rem;
+    flex-direction: row;
+}
+
+.header__menu .navbar-nav .nav-link:hover {
+    text-decoration: none;
+    opacity: .5;
+}
+
+.header__icons .navbar-nav {
+    gap: 1rem;
+}
+
+.header__icons .navbar-nav .nav-link {
+    font-size: 1.1rem;
+}
+
+.header__icons .navbar-nav .nav-link:hover {
+    opacity: .5;
+}

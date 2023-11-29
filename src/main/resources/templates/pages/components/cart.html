@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<th:block th:insert="~{/fragments/heading/heading :: heading(title='Cart')}"/>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between px-5 py-3">
+    <div class="header__menu">
+        <ul class="navbar-nav flex-row me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+            </li>
+        </ul>
+    </div>
+    <div class="d-flex justify-content-center align-content-center">
+        <div class="p-2">
+            <a role="button" class="btn" th:href="@{/cart}">Cart</a>
+        </div>
+        <div class="p-2">
+            <a role="button" class="btn" th:href="@{/auth/login}">Login</a>
+        </div>
+        <div class="p-2">
+            <a role="button" class="btn" th:href="@{/auth/register}">Register</a>
+        </div>
+        <div class="p-2">
+            <a role="button" href="/" class="logout btn">Logout</a>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="details text-center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col" class="fw-bold h-3">Name</th>
+                <th scope="col" class="fw-bold h-3">Price</th>
+                <th scope="col" class="fw-bold h-3">Quantity</th>
+                <th scope="col" class="fw-bold h-3"></th>
+
+            </tr>
+            </thead>
+            <tbody class="txt">
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <a role="button" class="btn" th:href="@{/order}">Continue</a>
+        <a role="button" class="btn" th:href="@{/}">Buy another</a>
+    </div>
+</div>
+
+<th:block th:insert="~{fragments/scripts/scripts :: scripts}"/>
+<script th:src="@{/js/components/cart.js}"></script>
+</body>
+</html>

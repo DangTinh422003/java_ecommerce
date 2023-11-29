@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<th:block th:insert="~{/fragments/heading/heading :: heading(title='Login')}"/>
+<body>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center m-5">
+        <div class="offset-3"></div>
+
+        <div class="d-flex justify-content-center text-center flex-column col-6">
+            <div class="title h4 text-uppercase">Login</div>
+            <form action="/" class="form d-flex flex-column" id="formSignIn">
+                <div class="input-group pb-3">
+                    <input type="text" id="username" name="username" class="form-control border-1 rounded-0"
+                           placeholder="Username"
+                           style="min-height: 3rem">
+                </div>
+
+                <div class="input-group pb-3">
+                    <input type="password" name="password" class="form-control border-1 rounded-0" id="password"
+                           placeholder="Password" style="min-height: 3rem">
+                </div>
+
+                <span class="error mb-3 text-danger"></span>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="actions d-flex flex-column align-items-start gap-2">
+                        <a class="text-dark" th:href="@{/auth/register}">Create account</a>
+                        <a class="text-dark" th:href="@{/}">Back</a>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn text-uppercase p-3 w-100 px-5 text-dark border-0 rounded-0"
+                                style="background-color: #E3C5B8">Login
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="offset-3"></div>
+    </div>
+</div>
+<th:block th:insert="~{fragments/scripts/scripts :: scripts}"/>
+<script th:src="@{/js/auth/login.js}"></script>
+</body>
+</html>
